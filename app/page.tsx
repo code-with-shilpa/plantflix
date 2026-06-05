@@ -66,7 +66,7 @@ export default function Home() {
         );
 
         console.log("HOME RESPONSE:", res);
-        setPlants(res.documents);
+       setPlants(res.documents as unknown as Plant[]);
       } catch (err) {
         console.error("HOME ERROR:", err);
       }

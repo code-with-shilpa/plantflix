@@ -39,7 +39,7 @@ export default function PlantDetails() {
         "plants",
         id as string
       )
-      setPlant(res as Plant)
+      setPlant(res as unknown as Plant)
     } catch (err) {
       console.error(err)
       setError("Specimen not found.")
