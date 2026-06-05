@@ -1,26 +1,80 @@
-@import "tailwindcss";
+ @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap');
+ @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+ :root {
+   --background: #ffffff;
+   --foreground: #171717;
+ }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+ @theme inline {
+   --color-background: var(--background);
+   --color-foreground: var(--foreground);
+   --font-sans: var(--font-geist-sans);
+   --font-mono: var(--font-geist-mono);
+ }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+ @media (prefers-color-scheme: dark) {
+   :root {
+     --background: #0a0a0a;
+     --foreground: #ededed;
+   }
+ }
+
+ body {
+   background: var(--background);
+   color: var(--foreground);
+   /* font-family:'Times New Roman', Times, serif; */
+ }
+
+
+ body {
+   font-family: 'Montserrat', sans-serif;
+   scroll-behavior: smooth;
+ }
+
+ h1,
+ h2,
+ h3,
+ .font-serif {
+   font-family: 'Playfair Display', serif;
+ }
+
+ .animate-fade-in-up {
+   animation: fadeInUp 1s ease-out forwards;
+   opacity: 0;
+ }
+
+ .animate-slow-zoom {
+   animation: slowZoom 20s ease-in-out infinite alternate;
+ }
+
+ .delay-100 {
+   animation-delay: 100ms;
+ }
+
+ .delay-200 {
+   animation-delay: 200ms;
+ }
+
+ @keyframes fadeInUp {
+   from {
+     opacity: 0;
+     transform: translateY(30px);
+   }
+
+   to {
+     opacity: 1;
+     transform: translateY(0);
+   }
+ }
+
+ @keyframes slowZoom {
+   from {
+     transform: scale(1);
+   }
+
+   to {
+     transform: scale(1.1);
+   }
+ }
