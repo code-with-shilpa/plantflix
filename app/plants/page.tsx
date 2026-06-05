@@ -98,7 +98,7 @@ export default function PlantsPage() {
         queries
       )
 
-      setPlants(res.documents)
+      setPlants(res.documents as unknown as Plant[]);
     } catch (err) {
       console.error("Error fetching plants:", err)
     } finally {
