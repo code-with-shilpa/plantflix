@@ -133,9 +133,11 @@ export default function AdminPlantsPage() {
                   <div>
                     <h2 className="font-semibold text-slate-800 text-lg tracking-tight line-clamp-1">
                       {plant.name
-                        .split(" ")
-                        .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-                        .join(" ")}
+  .split(" ")
+  .map((word: string) =>
+    word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+  )
+  .join(" ")}
                     </h2>
                     <p className="text-xl font-bold text-emerald-600 mt-1.5">
                       ₹{Number(plant.price).toLocaleString('en-IN')}
