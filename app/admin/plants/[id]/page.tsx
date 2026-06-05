@@ -41,7 +41,7 @@ export default function AdminPlantDetails() {
         id as string
       );
 
-      setPlant(res as Plant);
+      setPlant(res as unknown as Plant);
     } catch (error) {
       console.error(error);
     } finally {
