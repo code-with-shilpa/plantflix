@@ -12,8 +12,10 @@ export type CartItem = {
 type CartStore = {
   cart: CartItem[]
   addToCart: (item: CartItem) => void
+  removeFromCart: (id: string) => void
+  updateQty: (id: string, quantity: number) => void
+  clearCart: () => void
 }
-
 
 
 export const useCartStore = create<CartStore>((set) => ({
