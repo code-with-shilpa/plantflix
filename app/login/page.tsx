@@ -118,7 +118,7 @@ export default function LoginPage() {
       </div>
 
       {/* RIGHT: Combined Tab Form Section */}
-      <div className="flex items-center justify-center p-6 sm:p-12 lg:p-16 relative bg-[#F9FAF9]">
+      <div className="flex items-center justify-center p-30 sm:p-12 lg:p-16 relative bg-[#F9FAF9]">
         <div className="w-full max-w-[440px] relative z-10">
 
           {/* Dynamic Segmented Switcher Header */}
