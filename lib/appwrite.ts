@@ -4,7 +4,7 @@ const client = new Client();
 
 client
   .setEndpoint("https://fra.cloud.appwrite.io/v1") 
-  .setProject(process.env.NEXT_PUBLIC_DB_ID!); 
+  .setProject('69b1061800066d2c0d78'); 
 
 export const account = new Account(client);
 export const databases = new Databases(client);
