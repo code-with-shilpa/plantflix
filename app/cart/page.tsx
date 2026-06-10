@@ -186,7 +186,7 @@ export default function CartPage() {
 
   // --- ACTIVE CART STATE ---
   return (
-    <div className="min-h-screen bg-white-50/50 py-30 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-grey-50/50 py-30 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         
         {/* Page Header */}
@@ -207,7 +207,7 @@ export default function CartPage() {
               return (
                 <div
                   key={item.id}
-                  className="flex flex-col sm:flex-items-center sm:flex-row gap-4 sm:gap-6 bg-white p-5 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-200"
+                  className="flex flex-col sm:items-center sm:flex-row gap-4 sm:gap-6 bg-white p-5 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-200"
                 >
                   {/* IMAGE */}
                   <div className="relative w-full sm:w-28 h-28 bg-gray-100 rounded-xl overflow-hidden flex-shrink-0">
