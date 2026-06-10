@@ -5,11 +5,12 @@ import { useEffect, useState } from "react"
 import { account } from "@/lib/appwrite"
 import { useRouter } from "next/navigation"
 import { Package, User, Heart, LogOut, ChevronDown } from "lucide-react"
+import { useCartStore } from "@/store/cartStore"
 
 export default function Navbar() {
   const [user, setUser] = useState<any>(null)
   const [isAuthLoading, setIsAuthLoading] = useState(true) // ✅ Added loading state
-  const [cartCount, setCartCount] = useState(0)
+ 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [showProfileMenu, setShowProfileMenu] = useState(false)
   const router = useRouter()
@@ -33,21 +34,7 @@ export default function Navbar() {
 
     // 1. Listen for auth changes
     window.addEventListener("auth-change", getUser)
-
-    const updateCartCount = () => {
-      const cart = JSON.parse(localStorage.getItem("cart") || "[]")
-      const total = cart.reduce((sum: number, item: any) => sum + item.quantity, 0)
-      setCartCount(total)
-    }
-
-    updateCartCount()
-    window.addEventListener("cart-updated", updateCartCount)
-    
-    // Cleanup listeners
-    return () => {
-      window.removeEventListener("cart-updated", updateCartCount)
-      window.removeEventListener("auth-change", getUser) // 2. Cleanup auth listener
-    }
+ 
   }, [])
 
   const logout = async () => {
@@ -55,6 +42,13 @@ export default function Navbar() {
     setUser(null)
     router.push("/login")
   }
+
+  const cart = useCartStore((state) => state.cart);
+
+const cartCount = cart.reduce(
+  (sum, item) => sum + item.quantity,
+  0
+);
 
   return (
     <nav className="fixed w-full top-0 z-50 bg-white/85 backdrop-blur-lg border-b border-gray-100 shadow-sm transition-all">
